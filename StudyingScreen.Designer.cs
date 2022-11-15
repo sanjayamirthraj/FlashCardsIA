@@ -78,11 +78,11 @@ namespace SanjayComSciIA
             // txtQuestion
             // 
             this.txtQuestion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuestion.Location = new System.Drawing.Point(144, 111);
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(243, 31);
+            this.txtQuestion.Size = new System.Drawing.Size(243, 38);
             this.txtQuestion.TabIndex = 14;
             this.txtQuestion.Text = "Question 1";
             this.txtQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -145,6 +145,7 @@ namespace SanjayComSciIA
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // StudyingScreen
             // 

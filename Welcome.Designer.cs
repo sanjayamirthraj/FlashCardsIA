@@ -30,26 +30,13 @@ namespace SanjayComSciIA
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Welcome));
-            this.btnStudy1 = new System.Windows.Forms.Button();
             this.HeadingMainScreen = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSubject2 = new System.Windows.Forms.Label();
-            this.lblSubject3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditAndStudy = new System.Windows.Forms.Button();
-            this.btnStudy2 = new System.Windows.Forms.Button();
-            this.btnStudy3 = new System.Windows.Forms.Button();
+            this.btnStudy = new System.Windows.Forms.Button();
+            this.listSubjects = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnStudy1
-            // 
-            this.btnStudy1.Location = new System.Drawing.Point(446, 191);
-            this.btnStudy1.Name = "btnStudy1";
-            this.btnStudy1.Size = new System.Drawing.Size(118, 29);
-            this.btnStudy1.TabIndex = 0;
-            this.btnStudy1.Text = "Study";
-            this.btnStudy1.UseVisualStyleBackColor = true;
             // 
             // HeadingMainScreen
             // 
@@ -60,36 +47,6 @@ namespace SanjayComSciIA
             this.HeadingMainScreen.Size = new System.Drawing.Size(618, 139);
             this.HeadingMainScreen.TabIndex = 2;
             this.HeadingMainScreen.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(84, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Subject 1";
-            // 
-            // lblSubject2
-            // 
-            this.lblSubject2.AutoSize = true;
-            this.lblSubject2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lblSubject2.Location = new System.Drawing.Point(84, 263);
-            this.lblSubject2.Name = "lblSubject2";
-            this.lblSubject2.Size = new System.Drawing.Size(113, 29);
-            this.lblSubject2.TabIndex = 4;
-            this.lblSubject2.Text = "Subject 1";
-            // 
-            // lblSubject3
-            // 
-            this.lblSubject3.AutoSize = true;
-            this.lblSubject3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lblSubject3.Location = new System.Drawing.Point(84, 333);
-            this.lblSubject3.Name = "lblSubject3";
-            this.lblSubject3.Size = new System.Drawing.Size(113, 29);
-            this.lblSubject3.TabIndex = 5;
-            this.lblSubject3.Text = "Subject 1";
             // 
             // label4
             // 
@@ -113,24 +70,26 @@ namespace SanjayComSciIA
             this.btnEditAndStudy.TabIndex = 8;
             this.btnEditAndStudy.Text = "Edit and View Cards";
             this.btnEditAndStudy.UseVisualStyleBackColor = false;
+            this.btnEditAndStudy.Click += new System.EventHandler(this.btnEditAndStudy_Click);
             // 
-            // btnStudy2
+            // btnStudy
             // 
-            this.btnStudy2.Location = new System.Drawing.Point(446, 267);
-            this.btnStudy2.Name = "btnStudy2";
-            this.btnStudy2.Size = new System.Drawing.Size(118, 29);
-            this.btnStudy2.TabIndex = 9;
-            this.btnStudy2.Text = "Study";
-            this.btnStudy2.UseVisualStyleBackColor = true;
+            this.btnStudy.Location = new System.Drawing.Point(448, 230);
+            this.btnStudy.Name = "btnStudy";
+            this.btnStudy.Size = new System.Drawing.Size(134, 64);
+            this.btnStudy.TabIndex = 9;
+            this.btnStudy.Text = "Study";
+            this.btnStudy.UseVisualStyleBackColor = true;
+            this.btnStudy.Click += new System.EventHandler(this.btnStudy_Click);
             // 
-            // btnStudy3
+            // listSubjects
             // 
-            this.btnStudy3.Location = new System.Drawing.Point(446, 333);
-            this.btnStudy3.Name = "btnStudy3";
-            this.btnStudy3.Size = new System.Drawing.Size(118, 29);
-            this.btnStudy3.TabIndex = 10;
-            this.btnStudy3.Text = "Study";
-            this.btnStudy3.UseVisualStyleBackColor = true;
+            this.listSubjects.HideSelection = false;
+            this.listSubjects.Location = new System.Drawing.Point(67, 182);
+            this.listSubjects.Name = "listSubjects";
+            this.listSubjects.Size = new System.Drawing.Size(336, 167);
+            this.listSubjects.TabIndex = 11;
+            this.listSubjects.UseCompatibleStateImageBehavior = false;
             // 
             // Welcome
             // 
@@ -138,15 +97,11 @@ namespace SanjayComSciIA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
-            this.Controls.Add(this.btnStudy3);
-            this.Controls.Add(this.btnStudy2);
+            this.Controls.Add(this.listSubjects);
+            this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnEditAndStudy);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblSubject3);
-            this.Controls.Add(this.lblSubject2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.HeadingMainScreen);
-            this.Controls.Add(this.btnStudy1);
             this.Name = "Welcome";
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Welcome_Load);
@@ -157,16 +112,11 @@ namespace SanjayComSciIA
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnStudy1;
         private System.Windows.Forms.PictureBox HeadingMainScreen;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblSubject2;
-        private System.Windows.Forms.Label lblSubject3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditAndStudy;
-        private System.Windows.Forms.Button btnStudy2;
-        private System.Windows.Forms.Button btnStudy3;
+        private System.Windows.Forms.Button btnStudy;
+        private System.Windows.Forms.ListView listSubjects;
     }
 }
 

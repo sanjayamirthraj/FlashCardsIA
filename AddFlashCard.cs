@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,6 +34,15 @@ namespace SanjayComSciIA
                 return;
 
             //Need to add functionality of creating a card and the card class
+            //After the user adds a card, the form then closes and they return to the view cards screen.
+            this.Close();
+            Thread t = new Thread(new ThreadStart(ThreadAddFlashCard));
+            t.Start();
+        }
+
+        public void ThreadAddFlashCard()
+        {
+            Application.Run(new ViewFlashCards());
         }
 
         private bool Validation()
@@ -65,5 +75,18 @@ namespace SanjayComSciIA
             return passed;
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //closing the current form 
+            this.Close();
+            //Creating a new thread that runs the second application
+            Thread t = new Thread(new ThreadStart(ThreadWelcome));
+            t.Start();
+        }
+
+        private void ThreadWelcome()
+        {
+            Application.Run(new Welcome());
+        }
     }
 }

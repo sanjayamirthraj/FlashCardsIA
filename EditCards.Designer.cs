@@ -124,6 +124,7 @@ namespace SanjayComSciIA
             this.btnConfirmEdit.TabIndex = 27;
             this.btnConfirmEdit.Text = "Edit Card";
             this.btnConfirmEdit.UseVisualStyleBackColor = true;
+            this.btnConfirmEdit.Click += new System.EventHandler(this.btnConfirmEdit_Click);
             // 
             // btnExit
             // 
@@ -134,6 +135,7 @@ namespace SanjayComSciIA
             this.btnExit.TabIndex = 28;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // EditCards
             // 
