@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SanjayComSciIA.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace SanjayComSciIA
 {
     public partial class ViewFlashCards : Form
     {
+        List<FlashCardsModel> FlashCards = new List<FlashCardsModel>();
         public ViewFlashCards()
         {
             InitializeComponent();
@@ -22,6 +24,11 @@ namespace SanjayComSciIA
         {
             this.CenterToScreen();
             this.SetControls();
+
+            //populating the flashcards
+            FlashCards = FlashCardsModel.GetFlashCards();
+
+            this.PopulateFlashCards();
         }
 
         private void SetControls()
@@ -32,6 +39,12 @@ namespace SanjayComSciIA
             this.MinimizeBox = false;
         }
 
+        private void PopulateFlashCards()
+        {
+            var flashcards = (from d in FlashCards select d.Front).ToList();
+
+            this.lstFlashCards.DataSource = flashcards;
+        }
         private void btnAddCard_Click(object sender, EventArgs e)
         {
             //close the form 
@@ -57,6 +70,25 @@ namespace SanjayComSciIA
         private void ThreadWelcome()
         {
             Application.Run(new Welcome());
+        }
+
+        private void btnEditCard_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread t = new Thread(new ThreadStart(ThreadEditFlashCards));
+        }
+        private void ThreadEditFlashCards()
+        {
+            Application.Run(new EditCards());
+        }
+
+        private void btnDeleteCard_Click(object sender, EventArgs e)
+        {
+            var value = this.lstFlashCards.SelectedValue;
+
+            FlashCards.RemoveAll(x => x.Front == value.ToString());
+
+            //have to make sure that the value stays deleted
         }
     }
 }

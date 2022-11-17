@@ -34,7 +34,7 @@ namespace SanjayComSciIA
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditAndStudy = new System.Windows.Forms.Button();
             this.btnStudy = new System.Windows.Forms.Button();
-            this.listSubjects = new System.Windows.Forms.ListView();
+            this.lstSubjects = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +74,7 @@ namespace SanjayComSciIA
             // 
             // btnStudy
             // 
-            this.btnStudy.Location = new System.Drawing.Point(448, 230);
+            this.btnStudy.Location = new System.Drawing.Point(472, 232);
             this.btnStudy.Name = "btnStudy";
             this.btnStudy.Size = new System.Drawing.Size(134, 64);
             this.btnStudy.TabIndex = 9;
@@ -82,14 +82,13 @@ namespace SanjayComSciIA
             this.btnStudy.UseVisualStyleBackColor = true;
             this.btnStudy.Click += new System.EventHandler(this.btnStudy_Click);
             // 
-            // listSubjects
+            // lstSubjects
             // 
-            this.listSubjects.HideSelection = false;
-            this.listSubjects.Location = new System.Drawing.Point(67, 182);
-            this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(336, 167);
-            this.listSubjects.TabIndex = 11;
-            this.listSubjects.UseCompatibleStateImageBehavior = false;
+            this.lstSubjects.FormattingEnabled = true;
+            this.lstSubjects.Location = new System.Drawing.Point(47, 170);
+            this.lstSubjects.Name = "lstSubjects";
+            this.lstSubjects.Size = new System.Drawing.Size(419, 199);
+            this.lstSubjects.TabIndex = 10;
             // 
             // Welcome
             // 
@@ -97,7 +96,7 @@ namespace SanjayComSciIA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
-            this.Controls.Add(this.listSubjects);
+            this.Controls.Add(this.lstSubjects);
             this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnEditAndStudy);
             this.Controls.Add(this.label4);
@@ -116,7 +115,7 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditAndStudy;
         private System.Windows.Forms.Button btnStudy;
-        private System.Windows.Forms.ListView listSubjects;
+        private System.Windows.Forms.ListBox lstSubjects;
     }
 }
 

@@ -37,8 +37,8 @@ namespace SanjayComSciIA
             this.txtSearchBar = new System.Windows.Forms.TextBox();
             this.btnConfirmSearch = new System.Windows.Forms.Button();
             this.btnAddCard = new System.Windows.Forms.Button();
-            this.listFlashCards = new System.Windows.Forms.ListView();
             this.btnEditCard = new System.Windows.Forms.Button();
+            this.lstFlashCards = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,7 @@ namespace SanjayComSciIA
             this.btnDeleteCard.TabIndex = 25;
             this.btnDeleteCard.Text = "Delete";
             this.btnDeleteCard.UseVisualStyleBackColor = true;
+            this.btnDeleteCard.Click += new System.EventHandler(this.btnDeleteCard_Click);
             // 
             // txtSearchBar
             // 
@@ -110,15 +111,6 @@ namespace SanjayComSciIA
             this.btnAddCard.UseVisualStyleBackColor = true;
             this.btnAddCard.Click += new System.EventHandler(this.btnAddCard_Click);
             // 
-            // listFlashCards
-            // 
-            this.listFlashCards.HideSelection = false;
-            this.listFlashCards.Location = new System.Drawing.Point(32, 120);
-            this.listFlashCards.Name = "listFlashCards";
-            this.listFlashCards.Size = new System.Drawing.Size(464, 135);
-            this.listFlashCards.TabIndex = 29;
-            this.listFlashCards.UseCompatibleStateImageBehavior = false;
-            // 
             // btnEditCard
             // 
             this.btnEditCard.Location = new System.Drawing.Point(502, 120);
@@ -127,13 +119,22 @@ namespace SanjayComSciIA
             this.btnEditCard.TabIndex = 24;
             this.btnEditCard.Text = "Edit";
             this.btnEditCard.UseVisualStyleBackColor = true;
+            this.btnEditCard.Click += new System.EventHandler(this.btnEditCard_Click);
+            // 
+            // lstFlashCards
+            // 
+            this.lstFlashCards.FormattingEnabled = true;
+            this.lstFlashCards.Location = new System.Drawing.Point(46, 120);
+            this.lstFlashCards.Name = "lstFlashCards";
+            this.lstFlashCards.Size = new System.Drawing.Size(450, 134);
+            this.lstFlashCards.TabIndex = 29;
             // 
             // ViewFlashCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 464);
-            this.Controls.Add(this.listFlashCards);
+            this.Controls.Add(this.lstFlashCards);
             this.Controls.Add(this.btnAddCard);
             this.Controls.Add(this.btnConfirmSearch);
             this.Controls.Add(this.txtSearchBar);
@@ -160,7 +161,7 @@ namespace SanjayComSciIA
         private System.Windows.Forms.TextBox txtSearchBar;
         private System.Windows.Forms.Button btnConfirmSearch;
         private System.Windows.Forms.Button btnAddCard;
-        private System.Windows.Forms.ListView listFlashCards;
         private System.Windows.Forms.Button btnEditCard;
+        private System.Windows.Forms.ListBox lstFlashCards;
     }
 }

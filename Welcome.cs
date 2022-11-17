@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SanjayComSciIA.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace SanjayComSciIA
 {
     public partial class Welcome : Form
     {
+        List<FlashCardsModel> FlashCards = new List<FlashCardsModel>();
         public Welcome()
         {
             InitializeComponent();
@@ -24,6 +26,9 @@ namespace SanjayComSciIA
             this.CenterToScreen();
             //set the minimization controls
             this.SetControls();
+
+            FlashCards = FlashCardsModel.GetFlashCards();
+            this.PopulateSubjects();
         }
 
         private void SetControls()
@@ -32,6 +37,13 @@ namespace SanjayComSciIA
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+        }
+
+        private void PopulateSubjects()
+        {
+            var flashcards = (from d in FlashCards select d.Subject).ToList();
+
+            this.lstSubjects.DataSource = flashcards;
         }
 
         private void btnEditAndStudy_Click(object sender, EventArgs e)

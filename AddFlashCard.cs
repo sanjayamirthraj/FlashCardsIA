@@ -14,6 +14,7 @@ namespace SanjayComSciIA
 {
     public partial class AddFlashCard : Form
     {
+        List<FlashCardsModel> data = new List<FlashCardsModel>();
         string cardfront = string.Empty;
         string cardback = string.Empty;
         string cardsubject = string.Empty;
@@ -33,13 +34,25 @@ namespace SanjayComSciIA
             if (!this.Validation())
                 return;
 
-            //Need to add functionality of creating a card and the card class
+            //adds the card to the data list
+            data.Add(new FlashCardsModel(this.txtEnterFront.Text.Trim(), this.txtEnterBack.Text.Trim(), this.txtEnterSubject.Text.Trim(), "None"));
+
             //After the user adds a card, the form then closes and they return to the view cards screen.
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadAddFlashCard));
             t.Start();
         }
+     
+        //Is the AddToList() method necessary?
+        public void AddToList()
+        {
+            //LINQ - Get Front of the Field Data from ArrayList
+            var allFlashCardsList = (from d in data select d.Front).ToList();
 
+            /*this.lstFlashCards.DataSource = allFlashCardsList;
+                Need to figure out delegates and moving data backwards
+             */
+        }
         public void ThreadAddFlashCard()
         {
             Application.Run(new ViewFlashCards());
