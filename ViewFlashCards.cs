@@ -76,10 +76,22 @@ namespace SanjayComSciIA
         {
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadEditFlashCards));
+            t.Start();
         }
         private void ThreadEditFlashCards()
         {
             Application.Run(new EditCards());
+        }
+
+
+
+        //FIX THIS PLEASE MAKE SURE THE DATA IS STILL DELETED AFTER 
+        private void AddToList()
+        {
+            //LINQ - Get Flashcard Field Data from ArrayList
+            var results = (from d in FlashCards select d.Front).ToList();
+
+            this.lstFlashCards.DataSource = results;
         }
 
         private void btnDeleteCard_Click(object sender, EventArgs e)
@@ -87,6 +99,11 @@ namespace SanjayComSciIA
             var value = this.lstFlashCards.SelectedValue;
 
             FlashCards.RemoveAll(x => x.Front == value.ToString());
+            FlashCards.RemoveAll(x => x.Back == value.ToString());
+            FlashCards.RemoveAll(x => x.Subject == value.ToString());
+            FlashCards.RemoveAll(x => x.Difficulty == value.ToString());
+
+            this.AddToList();
 
             //have to make sure that the value stays deleted
         }
