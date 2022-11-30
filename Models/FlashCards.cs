@@ -16,7 +16,7 @@ namespace SanjayComSciIA.Models
 
         public FlashCardsModel()
         {
-
+            
         }
         //setting up the constructor
         public FlashCardsModel(string f, string b, string s, string d)
