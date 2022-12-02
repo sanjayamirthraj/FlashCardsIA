@@ -42,8 +42,6 @@ namespace SanjayComSciIA
         private void PopulateSubjects()
         {
             var flashcards = (from d in FlashCards select d.Subject).ToList();
-
-            this.lstSubjects.DataSource = flashcards;
         }
 
         private void btnEditAndStudy_Click(object sender, EventArgs e)

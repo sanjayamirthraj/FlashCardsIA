@@ -35,6 +35,7 @@ namespace SanjayComSciIA.Models
               new FlashCardsModel("Front", "Back", "Subject", "Hard"),
               new FlashCardsModel("Front1", "Back1", "Subject1", "Hard1"),
               new FlashCardsModel("Front2", "Back2", "Subject2", "Hard2"),
+              
             };
         }
     }

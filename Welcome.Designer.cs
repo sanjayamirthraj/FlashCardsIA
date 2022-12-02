@@ -34,7 +34,6 @@ namespace SanjayComSciIA
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditAndStudy = new System.Windows.Forms.Button();
             this.btnStudy = new System.Windows.Forms.Button();
-            this.lstSubjects = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,21 +73,13 @@ namespace SanjayComSciIA
             // 
             // btnStudy
             // 
-            this.btnStudy.Location = new System.Drawing.Point(472, 232);
+            this.btnStudy.Location = new System.Drawing.Point(44, 227);
             this.btnStudy.Name = "btnStudy";
-            this.btnStudy.Size = new System.Drawing.Size(134, 64);
+            this.btnStudy.Size = new System.Drawing.Size(551, 64);
             this.btnStudy.TabIndex = 9;
             this.btnStudy.Text = "Study";
             this.btnStudy.UseVisualStyleBackColor = true;
             this.btnStudy.Click += new System.EventHandler(this.btnStudy_Click);
-            // 
-            // lstSubjects
-            // 
-            this.lstSubjects.FormattingEnabled = true;
-            this.lstSubjects.Location = new System.Drawing.Point(47, 170);
-            this.lstSubjects.Name = "lstSubjects";
-            this.lstSubjects.Size = new System.Drawing.Size(419, 199);
-            this.lstSubjects.TabIndex = 10;
             // 
             // Welcome
             // 
@@ -96,7 +87,6 @@ namespace SanjayComSciIA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
-            this.Controls.Add(this.lstSubjects);
             this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnEditAndStudy);
             this.Controls.Add(this.label4);
@@ -115,7 +105,6 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditAndStudy;
         private System.Windows.Forms.Button btnStudy;
-        private System.Windows.Forms.ListBox lstSubjects;
     }
 }
 

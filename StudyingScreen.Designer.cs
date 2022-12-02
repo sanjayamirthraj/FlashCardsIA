@@ -32,13 +32,13 @@ namespace SanjayComSciIA
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudyingScreen));
             this.HeadingMainScreen = new System.Windows.Forms.PictureBox();
             this.lblCurrentlyStudying = new System.Windows.Forms.Label();
-            this.txtCardQA = new System.Windows.Forms.TextBox();
-            this.txtQuestion = new System.Windows.Forms.TextBox();
+            this.txtCardAnswer = new System.Windows.Forms.TextBox();
             this.btnFlip = new System.Windows.Forms.Button();
             this.btnHard = new System.Windows.Forms.Button();
             this.btnMedium = new System.Windows.Forms.Button();
             this.btnEasy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,28 +64,14 @@ namespace SanjayComSciIA
             this.lblCurrentlyStudying.TabIndex = 11;
             this.lblCurrentlyStudying.Text = "Currently Studying";
             // 
-            // txtCardQA
+            // txtCardAnswer
             // 
-            this.txtCardQA.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCardQA.Location = new System.Drawing.Point(23, 158);
-            this.txtCardQA.Multiline = true;
-            this.txtCardQA.Name = "txtCardQA";
-            this.txtCardQA.Size = new System.Drawing.Size(462, 131);
-            this.txtCardQA.TabIndex = 13;
-            this.txtCardQA.Text = resources.GetString("txtCardQA.Text");
-            this.txtCardQA.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtQuestion
-            // 
-            this.txtQuestion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(144, 111);
-            this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(243, 38);
-            this.txtQuestion.TabIndex = 14;
-            this.txtQuestion.Text = "Question 1";
-            this.txtQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCardAnswer.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCardAnswer.Location = new System.Drawing.Point(23, 158);
+            this.txtCardAnswer.Multiline = true;
+            this.txtCardAnswer.Name = "txtCardAnswer";
+            this.txtCardAnswer.Size = new System.Drawing.Size(462, 131);
+            this.txtCardAnswer.TabIndex = 13;
             // 
             // btnFlip
             // 
@@ -147,18 +133,28 @@ namespace SanjayComSciIA
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(225, 115);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 20;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // StudyingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 450);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnEasy);
             this.Controls.Add(this.btnMedium);
             this.Controls.Add(this.btnHard);
             this.Controls.Add(this.btnFlip);
-            this.Controls.Add(this.txtQuestion);
-            this.Controls.Add(this.txtCardQA);
+            this.Controls.Add(this.txtCardAnswer);
             this.Controls.Add(this.lblCurrentlyStudying);
             this.Controls.Add(this.HeadingMainScreen);
             this.Name = "StudyingScreen";
@@ -174,12 +170,12 @@ namespace SanjayComSciIA
 
         private System.Windows.Forms.PictureBox HeadingMainScreen;
         private System.Windows.Forms.Label lblCurrentlyStudying;
-        private System.Windows.Forms.TextBox txtCardQA;
-        private System.Windows.Forms.TextBox txtQuestion;
+        private System.Windows.Forms.TextBox txtCardAnswer;
         private System.Windows.Forms.Button btnFlip;
         private System.Windows.Forms.Button btnHard;
         private System.Windows.Forms.Button btnMedium;
         private System.Windows.Forms.Button btnEasy;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnStart;
     }
 }
