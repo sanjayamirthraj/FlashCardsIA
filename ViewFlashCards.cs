@@ -41,7 +41,7 @@ namespace SanjayComSciIA
 
         private void PopulateFlashCards()
         {
-            var flashcards = (from d in FlashCards select d.Front + "  " + d.Difficulty).ToList();
+            var flashcards = (from d in FlashCards select d.Front).ToList();
 
             this.lstFlashCards.DataSource = flashcards;
         }
