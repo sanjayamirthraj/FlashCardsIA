@@ -34,6 +34,7 @@ namespace SanjayComSciIA
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditAndStudy = new System.Windows.Forms.Button();
             this.btnStudy = new System.Windows.Forms.Button();
+            this.btnAddCard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +64,9 @@ namespace SanjayComSciIA
             // 
             this.btnEditAndStudy.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEditAndStudy.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAndStudy.Location = new System.Drawing.Point(55, 415);
+            this.btnEditAndStudy.Location = new System.Drawing.Point(56, 400);
             this.btnEditAndStudy.Name = "btnEditAndStudy";
-            this.btnEditAndStudy.Size = new System.Drawing.Size(509, 47);
+            this.btnEditAndStudy.Size = new System.Drawing.Size(255, 47);
             this.btnEditAndStudy.TabIndex = 8;
             this.btnEditAndStudy.Text = "Edit and View Cards";
             this.btnEditAndStudy.UseVisualStyleBackColor = false;
@@ -73,13 +74,28 @@ namespace SanjayComSciIA
             // 
             // btnStudy
             // 
+            this.btnStudy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnStudy.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStudy.Location = new System.Drawing.Point(44, 227);
             this.btnStudy.Name = "btnStudy";
             this.btnStudy.Size = new System.Drawing.Size(551, 64);
             this.btnStudy.TabIndex = 9;
             this.btnStudy.Text = "Study";
-            this.btnStudy.UseVisualStyleBackColor = true;
+            this.btnStudy.UseVisualStyleBackColor = false;
             this.btnStudy.Click += new System.EventHandler(this.btnStudy_Click);
+            // 
+            // btnAddCard
+            // 
+            this.btnAddCard.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddCard.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCard.Location = new System.Drawing.Point(317, 400);
+            this.btnAddCard.Name = "btnAddCard";
+            this.btnAddCard.Size = new System.Drawing.Size(250, 47);
+            this.btnAddCard.TabIndex = 10;
+            this.btnAddCard.Text = "Add Cards";
+            this.btnAddCard.UseVisualStyleBackColor = false;
+            this.btnAddCard.Click += new System.EventHandler(this.btnAddCard_Click);
             // 
             // Welcome
             // 
@@ -87,6 +103,7 @@ namespace SanjayComSciIA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
+            this.Controls.Add(this.btnAddCard);
             this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnEditAndStudy);
             this.Controls.Add(this.label4);
@@ -105,6 +122,7 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditAndStudy;
         private System.Windows.Forms.Button btnStudy;
+        private System.Windows.Forms.Button btnAddCard;
     }
 }
 

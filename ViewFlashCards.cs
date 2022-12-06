@@ -125,5 +125,19 @@ namespace SanjayComSciIA
             //have to make sure that the value stays deleted
         }
 
+        private void btnConfirmSearch_Click(object sender, EventArgs e)
+        {
+            string searchQuery = txtSearchBar.Text;
+            lstFlashCards.Items.Clear();
+            //FIX THIS NEXT TIME
+           // List<FlashCardsModel> FlashCardsSearch;
+           // for(int i = 0; i < FlashCards.Count; i++)
+           // {
+            //    if (FlashCards.ElementAt(i).ToString.Contains(searchQuery))
+            //    {
+            //        FlashCardsSearch.Add(FlashCards.ElementAt(i));
+            //    }
+            //}
+        }
     }
 }

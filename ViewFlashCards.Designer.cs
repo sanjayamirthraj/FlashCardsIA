@@ -100,6 +100,7 @@ namespace SanjayComSciIA
             this.btnConfirmSearch.TabIndex = 27;
             this.btnConfirmSearch.Text = "Search";
             this.btnConfirmSearch.UseVisualStyleBackColor = true;
+            this.btnConfirmSearch.Click += new System.EventHandler(this.btnConfirmSearch_Click);
             // 
             // btnAddCard
             // 
@@ -128,7 +129,6 @@ namespace SanjayComSciIA
             this.lstFlashCards.Name = "lstFlashCards";
             this.lstFlashCards.Size = new System.Drawing.Size(450, 134);
             this.lstFlashCards.TabIndex = 29;
-
             // 
             // ViewFlashCards
             // 

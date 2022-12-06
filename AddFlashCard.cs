@@ -47,7 +47,7 @@ namespace SanjayComSciIA
 
             //After the user adds a card, the form then closes and they return to the view cards screen.
             this.Close();
-            Thread t = new Thread(new ThreadStart(ThreaViewFlashCards));
+            Thread t = new Thread(new ThreadStart(ThreadViewFlashCards));
             t.Start();
         }
      
@@ -61,9 +61,9 @@ namespace SanjayComSciIA
                 Need to figure out delegates and moving data backwards
              */
         }
-        public void ThreaViewFlashCards()
+        public void ThreadViewFlashCards()
         {
-            Application.Run(new ViewFlashCards());
+            Application.Run(new ViewFlashCards(FlashCards));
         }
 
         private bool Validation()

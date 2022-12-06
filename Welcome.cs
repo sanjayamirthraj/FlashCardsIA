@@ -77,5 +77,21 @@ namespace SanjayComSciIA
         {
             Application.Run(new StudyingScreen());
         }
+
+        private void btnAddCard_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread t = new Thread(new ThreadStart(ThreadAddCards));
+            t.Start();
+        }
+        public void ThreadAddCards()
+        {
+            this.UpdateFlashCards();
+            Application.Run(new AddFlashCard(FlashCards));
+        }
+
+        private void UpdateFlashCards()
+        {
+        }
     }
 }
