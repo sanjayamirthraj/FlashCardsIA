@@ -128,6 +128,7 @@ namespace SanjayComSciIA
             this.lstFlashCards.Name = "lstFlashCards";
             this.lstFlashCards.Size = new System.Drawing.Size(450, 134);
             this.lstFlashCards.TabIndex = 29;
+
             // 
             // ViewFlashCards
             // 

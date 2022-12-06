@@ -14,7 +14,7 @@ namespace SanjayComSciIA
 {
     public partial class AddFlashCard : Form
     {
-        List<FlashCardsModel> data = new List<FlashCardsModel>();
+        List<FlashCardsModel> FlashCards;
         string cardfront = string.Empty;
         string cardback = string.Empty;
         string cardsubject = string.Empty;
@@ -24,10 +24,18 @@ namespace SanjayComSciIA
             InitializeComponent();
         }
 
+        public AddFlashCard(List<FlashCardsModel> fc)
+        {
+            InitializeComponent();
+            FlashCards = fc;
+        }
+
         private void AddFlashCard_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
         }
+
+
 
         private void btnConfirmCard_Click(object sender, EventArgs e)
         {
@@ -35,11 +43,11 @@ namespace SanjayComSciIA
                 return;
 
             //adds the card to the data list
-            data.Add(new FlashCardsModel(this.txtEnterFront.Text.Trim(), this.txtEnterBack.Text.Trim(), this.txtEnterSubject.Text.Trim(), "None"));
+            FlashCards.Add(new FlashCardsModel(this.txtEnterFront.Text.Trim(), this.txtEnterBack.Text.Trim(), this.txtEnterSubject.Text.Trim(), "None"));
 
             //After the user adds a card, the form then closes and they return to the view cards screen.
             this.Close();
-            Thread t = new Thread(new ThreadStart(ThreadAddFlashCard));
+            Thread t = new Thread(new ThreadStart(ThreaViewFlashCards));
             t.Start();
         }
      
@@ -47,13 +55,13 @@ namespace SanjayComSciIA
         public void AddToList()
         {
             //LINQ - Get Front of the Field Data from ArrayList
-            var allFlashCardsList = (from d in data select d.Front).ToList();
+            var allFlashCardsList = (from d in FlashCards select d.Front).ToList();
 
             /*this.lstFlashCards.DataSource = allFlashCardsList;
                 Need to figure out delegates and moving data backwards
              */
         }
-        public void ThreadAddFlashCard()
+        public void ThreaViewFlashCards()
         {
             Application.Run(new ViewFlashCards());
         }
@@ -99,7 +107,12 @@ namespace SanjayComSciIA
 
         private void ThreadWelcome()
         {
-            Application.Run(new Welcome());
+            this.UpdateFlashCards();
+            Application.Run(new Welcome(FlashCards));
+        }
+
+        private void UpdateFlashCards()
+        {
         }
     }
 }

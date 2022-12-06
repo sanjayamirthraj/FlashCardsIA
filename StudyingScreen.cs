@@ -106,7 +106,6 @@ namespace SanjayComSciIA
                 txtCardAnswer.Text = flashcardsFront[flashcardCounter].ToString();
                 isFront = true;
             }
-            flashcardCounter++;
         }
 
 

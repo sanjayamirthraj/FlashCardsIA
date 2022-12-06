@@ -14,11 +14,20 @@ namespace SanjayComSciIA
 {
     public partial class ViewFlashCards : Form
     {
-        List<FlashCardsModel> FlashCards = new List<FlashCardsModel>();
+        //takes a list of flashcards from the models file
+        List<FlashCardsModel> FlashCards;
+
         public ViewFlashCards()
         {
             InitializeComponent();
         }
+
+        public ViewFlashCards(List<FlashCardsModel> fc)
+        {
+            InitializeComponent();
+            FlashCards = fc;
+        }
+
 
         private void ViewFlashCards_Load(object sender, EventArgs e)
         {
@@ -26,7 +35,7 @@ namespace SanjayComSciIA
             this.SetControls();
 
             //populating the flashcards
-            FlashCards = FlashCardsModel.GetFlashCards();
+            //FlashCards = FlashCardsModel.GetFlashCards();
 
             this.PopulateFlashCards();
         }
@@ -56,7 +65,8 @@ namespace SanjayComSciIA
 
         public void ThreadAddCards()
         {
-            Application.Run(new AddFlashCard());
+            this.UpdateFlashCards();
+            Application.Run(new AddFlashCard(FlashCards));
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -69,7 +79,12 @@ namespace SanjayComSciIA
         }
         private void ThreadWelcome()
         {
-            Application.Run(new Welcome());
+            this.UpdateFlashCards();
+            Application.Run(new Welcome(FlashCards));
+        }
+
+        private void UpdateFlashCards()
+        {
         }
 
         private void btnEditCard_Click(object sender, EventArgs e)
@@ -96,8 +111,10 @@ namespace SanjayComSciIA
 
         private void btnDeleteCard_Click(object sender, EventArgs e)
         {
+            //select a flashcard
             var value = this.lstFlashCards.SelectedValue;
 
+            //attempting to remove the flashcard
             FlashCards.RemoveAll(x => x.Front == value.ToString());
             FlashCards.RemoveAll(x => x.Back == value.ToString());
             FlashCards.RemoveAll(x => x.Subject == value.ToString());
@@ -107,5 +124,6 @@ namespace SanjayComSciIA
 
             //have to make sure that the value stays deleted
         }
+
     }
 }

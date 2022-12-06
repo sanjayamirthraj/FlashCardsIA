@@ -14,10 +14,19 @@ namespace SanjayComSciIA
 {
     public partial class Welcome : Form
     {
-        List<FlashCardsModel> FlashCards = new List<FlashCardsModel>();
+        List<FlashCardsModel> FlashCards = FlashCardsModel.GetFlashCards();
+
         public Welcome()
         {
             InitializeComponent();
+            this.PopulateSubjects();
+        }
+
+        public Welcome(List<FlashCardsModel> fc)
+        {
+            InitializeComponent();
+            FlashCards = fc;
+            this.PopulateSubjects();
         }
 
         private void Welcome_Load(object sender, EventArgs e)
@@ -26,9 +35,6 @@ namespace SanjayComSciIA
             this.CenterToScreen();
             //set the minimization controls
             this.SetControls();
-
-            FlashCards = FlashCardsModel.GetFlashCards();
-            this.PopulateSubjects();
         }
 
         private void SetControls()
@@ -41,7 +47,7 @@ namespace SanjayComSciIA
 
         private void PopulateSubjects()
         {
-            var flashcards = (from d in FlashCards select d.Subject).ToList();
+           var flashcards = (from d in FlashCards select d.Subject).ToList();
         }
 
         private void btnEditAndStudy_Click(object sender, EventArgs e)
@@ -55,7 +61,7 @@ namespace SanjayComSciIA
 
         private void ThreadViewFlashCards()
         {
-            Application.Run(new ViewFlashCards());
+            Application.Run(new ViewFlashCards(FlashCards));
         }
 
         private void btnStudy_Click(object sender, EventArgs e)
