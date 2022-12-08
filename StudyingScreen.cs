@@ -14,13 +14,19 @@ namespace SanjayComSciIA
 {
     public partial class StudyingScreen : Form
     {
-        List<FlashCardsModel> FlashCards = new List<FlashCardsModel>();
+        List<FlashCardsModel> FlashCards;
         //creating a variable to move along the flashcards
         int flashcardCounter = 0;
         //creating a boolean to check if the card is on the front or the back
         bool isFront = true;
         public StudyingScreen()
         {
+            InitializeComponent();
+        }
+
+        public StudyingScreen(List<FlashCardsModel> fc)
+        {
+            FlashCards = fc;
             InitializeComponent();
         }
 
@@ -51,7 +57,6 @@ namespace SanjayComSciIA
             
         }
 
-
         private void btnMedium_Click(object sender, EventArgs e)
         {
             var flashcards = (from d in FlashCards select d.Front).ToList();
@@ -75,11 +80,12 @@ namespace SanjayComSciIA
 
         private void btnEasy_Click(object sender, EventArgs e)
         {
+            
             var flashcards = (from d in FlashCards select d.Front).ToList();
             //checking if there are more cards
             if (flashcardCounter > flashcards.Count() - 1)
             {
-                MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.None);
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application

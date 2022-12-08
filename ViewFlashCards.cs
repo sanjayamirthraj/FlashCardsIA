@@ -128,16 +128,18 @@ namespace SanjayComSciIA
         private void btnConfirmSearch_Click(object sender, EventArgs e)
         {
             string searchQuery = txtSearchBar.Text;
-            lstFlashCards.Items.Clear();
-            //FIX THIS NEXT TIME
-           // List<FlashCardsModel> FlashCardsSearch;
-           // for(int i = 0; i < FlashCards.Count; i++)
-           // {
-            //    if (FlashCards.ElementAt(i).ToString.Contains(searchQuery))
-            //    {
-            //        FlashCardsSearch.Add(FlashCards.ElementAt(i));
-            //    }
-            //}
+            
+           
+            List<FlashCardsModel> FlashCardsSearch = new List<FlashCardsModel>();
+            for(int i = 0; i < FlashCards.Count; i++)
+            {
+                if (FlashCards.ElementAt(i).Front.Contains(searchQuery))
+                {
+                    FlashCardsSearch.Add(FlashCards.ElementAt(i));
+               }
+            }
+            var flashcards = (from d in FlashCardsSearch select d.Front).ToList();
+            this.lstFlashCards.DataSource = flashcards;
         }
     }
 }

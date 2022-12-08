@@ -35,6 +35,8 @@ namespace SanjayComSciIA
             this.btnEditAndStudy = new System.Windows.Forms.Button();
             this.btnStudy = new System.Windows.Forms.Button();
             this.btnAddCard = new System.Windows.Forms.Button();
+            this.lstSubjects = new System.Windows.Forms.ListBox();
+            this.lblSelectSubject = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@ namespace SanjayComSciIA
             this.btnStudy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnStudy.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStudy.Location = new System.Drawing.Point(44, 227);
+            this.btnStudy.Location = new System.Drawing.Point(40, 321);
             this.btnStudy.Name = "btnStudy";
             this.btnStudy.Size = new System.Drawing.Size(551, 64);
             this.btnStudy.TabIndex = 9;
@@ -97,12 +99,32 @@ namespace SanjayComSciIA
             this.btnAddCard.UseVisualStyleBackColor = false;
             this.btnAddCard.Click += new System.EventHandler(this.btnAddCard_Click);
             // 
+            // lstSubjects
+            // 
+            this.lstSubjects.FormattingEnabled = true;
+            this.lstSubjects.Location = new System.Drawing.Point(40, 181);
+            this.lstSubjects.Name = "lstSubjects";
+            this.lstSubjects.Size = new System.Drawing.Size(551, 134);
+            this.lstSubjects.TabIndex = 11;
+            // 
+            // lblSelectSubject
+            // 
+            this.lblSelectSubject.AutoSize = true;
+            this.lblSelectSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectSubject.Location = new System.Drawing.Point(247, 149);
+            this.lblSelectSubject.Name = "lblSelectSubject";
+            this.lblSelectSubject.Size = new System.Drawing.Size(168, 29);
+            this.lblSelectSubject.TabIndex = 12;
+            this.lblSelectSubject.Text = "Select Subject";
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
+            this.Controls.Add(this.lblSelectSubject);
+            this.Controls.Add(this.lstSubjects);
             this.Controls.Add(this.btnAddCard);
             this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnEditAndStudy);
@@ -123,6 +145,8 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Button btnEditAndStudy;
         private System.Windows.Forms.Button btnStudy;
         private System.Windows.Forms.Button btnAddCard;
+        private System.Windows.Forms.ListBox lstSubjects;
+        private System.Windows.Forms.Label lblSelectSubject;
     }
 }
 

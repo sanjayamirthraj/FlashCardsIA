@@ -15,6 +15,7 @@ namespace SanjayComSciIA
     public partial class Welcome : Form
     {
         List<FlashCardsModel> FlashCards = FlashCardsModel.GetFlashCards();
+        List<FlashCardsModel> FlashCardsSpecificSubject = new List<FlashCardsModel>();
 
         public Welcome()
         {
@@ -48,6 +49,10 @@ namespace SanjayComSciIA
         private void PopulateSubjects()
         {
            var flashcards = (from d in FlashCards select d.Subject).ToList();
+            var flashcardSubjectListNoDuplicates = flashcards.Distinct().ToList();
+            this.lstSubjects.DataSource = flashcardSubjectListNoDuplicates;
+            
+
         }
 
         private void btnEditAndStudy_Click(object sender, EventArgs e)
@@ -66,16 +71,27 @@ namespace SanjayComSciIA
 
         private void btnStudy_Click(object sender, EventArgs e)
         {
-            //closing the current form 
-            this.Close();
+            //filter the flashcards to the subject to pass through and study the specific subject
+            String subjectToFilter = lstSubjects.SelectedItem.ToString();
+            for (int i = 0; i < FlashCards.Count-1; i++)
+            {
+                if (FlashCards.ElementAt(i).Subject.Contains(subjectToFilter))
+                {
+                    FlashCardsSpecificSubject.Add(FlashCards.ElementAt(i));
+                }
+            }
+            FlashCards = FlashCardsSpecificSubject;
             //Creating a new thread that runs the second application
             Thread t = new Thread(new ThreadStart(ThreadStudyFlashCards));
             t.Start();
+            //closing the current form 
+            this.Close();
         }
 
         public void ThreadStudyFlashCards()
         {
-            Application.Run(new StudyingScreen());
+            
+            Application.Run(new StudyingScreen(FlashCards));
         }
 
         private void btnAddCard_Click(object sender, EventArgs e)
@@ -93,5 +109,6 @@ namespace SanjayComSciIA
         private void UpdateFlashCards()
         {
         }
+
     }
 }

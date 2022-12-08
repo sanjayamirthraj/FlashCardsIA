@@ -56,10 +56,7 @@ namespace SanjayComSciIA
         {
             //LINQ - Get Front of the Field Data from ArrayList
             var allFlashCardsList = (from d in FlashCards select d.Front).ToList();
-
-            /*this.lstFlashCards.DataSource = allFlashCardsList;
-                Need to figure out delegates and moving data backwards
-             */
+           
         }
         public void ThreadViewFlashCards()
         {
