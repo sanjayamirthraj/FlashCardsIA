@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Windows.Forms; 
+ 
 namespace SanjayComSciIA
 {
     public partial class Welcome : Form
@@ -71,7 +71,7 @@ namespace SanjayComSciIA
 
         private void btnStudy_Click(object sender, EventArgs e)
         {
-            //filter the flashcards to the subject to pass through and study the specific subject
+         /**   //filter the flashcards to the subject to pass through and study the specific subject
             String subjectToFilter = lstSubjects.SelectedItem.ToString();
             for (int i = 0; i < FlashCards.Count-1; i++)
             {
@@ -82,12 +82,14 @@ namespace SanjayComSciIA
             }
             FlashCards = FlashCardsSpecificSubject;
             //Creating a new thread that runs the second application
+         **/
             Thread t = new Thread(new ThreadStart(ThreadStudyFlashCards));
             t.Start();
             //closing the current form 
             this.Close();
-        }
-
+       
+         }
+       
         public void ThreadStudyFlashCards()
         {
             
