@@ -21,6 +21,7 @@ namespace SanjayComSciIA
         {
             InitializeComponent();
             this.PopulateSubjects();
+            this.resetFlashCardList();
         }
 
         public Welcome(List<FlashCardsModel> fc)
@@ -71,9 +72,9 @@ namespace SanjayComSciIA
 
         private void btnStudy_Click(object sender, EventArgs e)
         {
-         /**   //filter the flashcards to the subject to pass through and study the specific subject
-            String subjectToFilter = lstSubjects.SelectedItem.ToString();
-            for (int i = 0; i < FlashCards.Count-1; i++)
+            //Figure out how to work this
+             String subjectToFilter = lstSubjects.SelectedItem.ToString();
+            for(int i = 0; i < FlashCards.Count - 1; i++)
             {
                 if (FlashCards.ElementAt(i).Subject.Contains(subjectToFilter))
                 {
@@ -82,7 +83,8 @@ namespace SanjayComSciIA
             }
             FlashCards = FlashCardsSpecificSubject;
             //Creating a new thread that runs the second application
-         **/
+
+
             Thread t = new Thread(new ThreadStart(ThreadStudyFlashCards));
             t.Start();
             //closing the current form 
@@ -108,6 +110,12 @@ namespace SanjayComSciIA
             Application.Run(new AddFlashCard(FlashCards));
         }
 
+        private void resetFlashCardList()
+        {
+            //this method will reset the flashcards after the user selects a specific subject. This resets that list to the original list
+            List<FlashCardsModel> FlashCards = FlashCardsModel.GetFlashCards();
+
+        }
         private void UpdateFlashCards()
         {
         }
