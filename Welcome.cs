@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms; 
  
 namespace SanjayComSciIA
-{
+{ 
     public partial class Welcome : Form
     {
         List<FlashCardsModel> FlashCards = FlashCardsModel.GetFlashCards();
