@@ -79,7 +79,7 @@ namespace SanjayComSciIA
             Thread t = new Thread(new ThreadStart(ThreadWelcome));
             t.Start();
         }
-        private void ThreadWelcome()
+        private void ThreadWelcome() 
         {
             this.UpdateFlashCards();
             Application.Run(new Welcome(FlashCards));
