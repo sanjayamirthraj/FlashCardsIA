@@ -16,6 +16,8 @@ namespace SanjayComSciIA
     {
         //takes a list of flashcards from the models file
         List<FlashCardsModel> FlashCards;
+        //creating a variable that notes the index of a card to be edited. Can pass this along to make changes. 
+        int indexOfEditCard;
 
         public ViewFlashCards()
         {
@@ -89,10 +91,13 @@ namespace SanjayComSciIA
 
         private void btnEditCard_Click(object sender, EventArgs e)
         {
+           
+            indexOfEditCard = lstFlashCards.SelectedIndex;
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadEditFlashCards));
             t.Start();
         }
+        //need to pass in the index as well to make edits
         private void ThreadEditFlashCards()
         {
             Application.Run(new EditCards());

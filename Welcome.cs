@@ -52,6 +52,7 @@ namespace SanjayComSciIA
            var flashcards = (from d in FlashCards select d.Subject).ToList();
             var flashcardSubjectListNoDuplicates = flashcards.Distinct().ToList();
             this.lstSubjects.DataSource = flashcardSubjectListNoDuplicates;
+            lstSubjects.SelectedItem = null;
             
 
         }
@@ -82,9 +83,10 @@ namespace SanjayComSciIA
                 }
             }
             FlashCards = FlashCardsSpecificSubject;
+
+
             //Creating a new thread that runs the second application
-
-
+            //need to make this work
             Thread t = new Thread(new ThreadStart(ThreadStudyFlashCards));
             t.Start();
             //closing the current form 
@@ -120,5 +122,9 @@ namespace SanjayComSciIA
         {
         }
 
+        private void btnClearSelection_Click(object sender, EventArgs e)
+        {
+            lstSubjects.SelectedItem = null;
+        }
     }
 }

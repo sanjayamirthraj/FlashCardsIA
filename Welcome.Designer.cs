@@ -37,6 +37,7 @@ namespace SanjayComSciIA
             this.btnAddCard = new System.Windows.Forms.Button();
             this.lstSubjects = new System.Windows.Forms.ListBox();
             this.lblSelectSubject = new System.Windows.Forms.Label();
+            this.btnClearSelection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +105,7 @@ namespace SanjayComSciIA
             this.lstSubjects.FormattingEnabled = true;
             this.lstSubjects.Location = new System.Drawing.Point(40, 181);
             this.lstSubjects.Name = "lstSubjects";
-            this.lstSubjects.Size = new System.Drawing.Size(551, 134);
+            this.lstSubjects.Size = new System.Drawing.Size(481, 134);
             this.lstSubjects.TabIndex = 11;
             // 
             // lblSelectSubject
@@ -117,12 +118,23 @@ namespace SanjayComSciIA
             this.lblSelectSubject.TabIndex = 12;
             this.lblSelectSubject.Text = "Select Subject";
             // 
+            // btnClearSelection
+            // 
+            this.btnClearSelection.Location = new System.Drawing.Point(527, 235);
+            this.btnClearSelection.Name = "btnClearSelection";
+            this.btnClearSelection.Size = new System.Drawing.Size(75, 23);
+            this.btnClearSelection.TabIndex = 13;
+            this.btnClearSelection.Text = "Clear";
+            this.btnClearSelection.UseVisualStyleBackColor = true;
+            this.btnClearSelection.Click += new System.EventHandler(this.btnClearSelection_Click);
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(618, 479);
+            this.Controls.Add(this.btnClearSelection);
             this.Controls.Add(this.lblSelectSubject);
             this.Controls.Add(this.lstSubjects);
             this.Controls.Add(this.btnAddCard);
@@ -147,6 +159,7 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Button btnAddCard;
         private System.Windows.Forms.ListBox lstSubjects;
         private System.Windows.Forms.Label lblSelectSubject;
+        private System.Windows.Forms.Button btnClearSelection;
     }
 }
 
