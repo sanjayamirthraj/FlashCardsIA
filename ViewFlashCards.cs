@@ -100,7 +100,7 @@ namespace SanjayComSciIA
         //need to pass in the index as well to make edits
         private void ThreadEditFlashCards()
         {
-            Application.Run(new EditCards());
+            Application.Run(new EditCards(FlashCards[indexOfEditCard]));
         }
 
 

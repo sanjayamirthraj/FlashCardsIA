@@ -16,9 +16,26 @@ namespace SanjayComSciIA
     public partial class EditCards : Form
     {
         List<FlashCardsModel> FlashCards;
+        FlashCardsModel editFlash = new FlashCardsModel();
+        FlashCardsModel editFlashNew = new FlashCardsModel();
         public EditCards()
         {
             InitializeComponent();
+        }
+
+        public EditCards(FlashCardsModel fc)
+        {
+            InitializeComponent();
+            //sets the edit textboxes to what the flashcard was
+            editFlash = fc;
+            txtEditFront.Text = editFlash.Front;
+            txtEditBack.Text = editFlash.Back;
+            txtEditSubject.Text = editFlash.Subject;
+
+        }
+
+        public EditCards(int v)
+        {
         }
 
         private void EditCards_Load(object sender, EventArgs e)
@@ -30,6 +47,28 @@ namespace SanjayComSciIA
         {
             if (!this.Validation())
                 return;
+            //if this passes validation, then the card is replaced with this edited card
+
+
+
+
+
+
+            //need to figure out how to find the position of the object in the list
+            //int indexOfEditFlashOld = FlashCards.FindIndex(s => s.Front.Equals(editFlash.Front));
+
+
+
+
+
+
+
+
+
+
+
+            editFlashNew = new FlashCardsModel(this.txtEditFront.Text.Trim(), this.txtEditBack.Text.Trim(), this.txtEditSubject.Text.Trim(), "None");
+            FlashCards[indexOfEditFlashOld] = editFlashNew;
         }
 
         private bool Validation()
