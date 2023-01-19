@@ -52,7 +52,9 @@ namespace SanjayComSciIA
 
         private void PopulateFlashCards()
         {
+            Console.Write(FlashCards);
             var flashcards = (from d in FlashCards select d.Front).ToList();
+            
 
             this.lstFlashCards.DataSource = flashcards;
         }
@@ -100,7 +102,7 @@ namespace SanjayComSciIA
         //need to pass in the index as well to make edits
         private void ThreadEditFlashCards()
         {
-            Application.Run(new EditCards(FlashCards[indexOfEditCard]));
+            Application.Run(new EditCards(FlashCards[indexOfEditCard], FlashCards));
         }
 
 

@@ -23,9 +23,10 @@ namespace SanjayComSciIA
             InitializeComponent();
         }
 
-        public EditCards(FlashCardsModel fc)
+        public EditCards(FlashCardsModel fc, List<FlashCardsModel> fcl)
         {
             InitializeComponent();
+            FlashCards = fcl;
             //sets the edit textboxes to what the flashcard was
             editFlash = fc;
             txtEditFront.Text = editFlash.Front;
@@ -47,28 +48,21 @@ namespace SanjayComSciIA
         {
             if (!this.Validation())
                 return;
-            //if this passes validation, then the card is replaced with this edited card
+
+            editFlash.Front = this.txtEditFront.Text.Trim();
+            editFlash.Back = this.txtEditBack.Text.Trim();
+            editFlash.Subject = this.txtEditSubject.Text.Trim();
+            editFlash.Difficulty = "none";
+           
+            this.Close();
+            Thread t = new Thread(new ThreadStart(ThreadViewFlashCards));
+            t.Start();
+        }
 
 
-
-
-
-
-            //need to figure out how to find the position of the object in the list
-            //int indexOfEditFlashOld = FlashCards.FindIndex(s => s.Front.Equals(editFlash.Front));
-
-
-
-
-
-
-
-
-
-
-
-            editFlashNew = new FlashCardsModel(this.txtEditFront.Text.Trim(), this.txtEditBack.Text.Trim(), this.txtEditSubject.Text.Trim(), "None");
-            FlashCards[indexOfEditFlashOld] = editFlashNew;
+        public void ThreadViewFlashCards()
+        {
+            Application.Run(new ViewFlashCards(FlashCards));
         }
 
         private bool Validation()
