@@ -74,16 +74,6 @@ namespace SanjayComSciIA
         private void btnStudy_Click(object sender, EventArgs e)
         {
 
-
-
-
-
-
-
-
-
-
-
 /*
             //Figure out how to work this
             String subjectToFilter = lstSubjects.SelectedItem.ToString();
@@ -103,25 +93,6 @@ namespace SanjayComSciIA
             //closing the current form 
             this.Close();
       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
          }
 
