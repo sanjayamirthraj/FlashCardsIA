@@ -44,7 +44,7 @@ namespace SanjayComSciIA
 
             //adds the card to the data list
             FlashCards.Add(new FlashCardsModel(this.txtEnterFront.Text.Trim(), this.txtEnterBack.Text.Trim(), this.txtEnterSubject.Text.Trim(), "None"));
-
+           
             //After the user adds a card, the form then closes and they return to the view cards screen.
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadViewFlashCards));

@@ -73,8 +73,20 @@ namespace SanjayComSciIA
 
         private void btnStudy_Click(object sender, EventArgs e)
         {
+
+
+
+
+
+
+
+
+
+
+
+
             //Figure out how to work this
-             String subjectToFilter = lstSubjects.SelectedItem.ToString();
+            String subjectToFilter = lstSubjects.SelectedItem.ToString();
             for(int i = 0; i < FlashCards.Count - 1; i++)
             {
                 if (FlashCards.ElementAt(i).Subject.Contains(subjectToFilter))
@@ -82,18 +94,43 @@ namespace SanjayComSciIA
                     FlashCardsSpecificSubject.Add(FlashCards.ElementAt(i));
                 }
             }
-            FlashCards = FlashCardsSpecificSubject;
-
-
+            
             //Creating a new thread that runs the second application
             //need to make this work
-            Thread t = new Thread(new ThreadStart(ThreadStudyFlashCards));
+            Thread t = new Thread(new ThreadStart(ThreadStudyFlashCardsSubject));
             t.Start();
             //closing the current form 
             this.Close();
        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          }
-       
+
+        public void ThreadStudyFlashCardsSubject()
+        {
+
+            Application.Run(new StudyingScreen(FlashCardsSpecificSubject));
+        }
+
         public void ThreadStudyFlashCards()
         {
             
