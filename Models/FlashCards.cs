@@ -42,5 +42,12 @@ namespace SanjayComSciIA.Models
 
             };
         }
+
+
+        public void sortFlashCards()
+        {
+            //add the merge sort stuff here
+            //add a key to the difficulties
+        }
     }
 }
