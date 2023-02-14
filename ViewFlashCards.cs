@@ -52,7 +52,6 @@ namespace SanjayComSciIA
 
         private void PopulateFlashCards()
         {
-            Console.Write(FlashCards);
             var flashcards = (from d in FlashCards select d.Front).ToList();
             
 
@@ -128,8 +127,6 @@ namespace SanjayComSciIA
             FlashCards.RemoveAll(x => x.Difficulty == value.ToString());
 
             this.AddToList();
-
-            //have to make sure that the value stays deleted
         }
 
         private void btnConfirmSearch_Click(object sender, EventArgs e)

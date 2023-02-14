@@ -76,6 +76,7 @@ namespace SanjayComSciIA
 
 /*
             //Figure out how to work this
+            //removal of features?
             String subjectToFilter = lstSubjects.SelectedItem.ToString();
             for(int i = 0; i < FlashCards.Count - 1; i++)
             {
