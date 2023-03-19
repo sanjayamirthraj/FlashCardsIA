@@ -43,6 +43,7 @@ namespace SanjayComSciIA
             if (flashcardCounter > flashcards.Count()-1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MergeSort(flashcards, 0, flashcards.Count - 1);
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application
@@ -64,6 +65,8 @@ namespace SanjayComSciIA
             if (flashcardCounter > flashcards.Count() - 1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MergeSort(flashcards, 0, flashcards.Count - 1);
+                flashcards.sortFlashCards();
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application
@@ -86,6 +89,7 @@ namespace SanjayComSciIA
             if (flashcardCounter > flashcards.Count() - 1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.None);
+                MergeSort(flashcards, 0, flashcards.Count - 1);
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application

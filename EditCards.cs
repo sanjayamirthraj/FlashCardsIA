@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SanjayComSciIA
 {
-    //make the editing functionality change the flashcard insteda of deleting and then adding
+    //make the editing functionality change the flashcard instead of deleting and then adding
     public partial class EditCards : Form
     {
         List<FlashCardsModel> FlashCards;
