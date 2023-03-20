@@ -28,6 +28,7 @@ namespace SanjayComSciIA.Models
             Difficulty = d;
         }
 
+        
         public static List<FlashCardsModel> GetFlashCards()
         {
             return new List<FlashCardsModel>
@@ -44,14 +45,7 @@ namespace SanjayComSciIA.Models
         }
 
 
-        public static void sortFlashCards(List<FlashCardsModel> flashcards)
-        {
-            //add the merge sort stuff here
-            //add a key to the difficulties
-        }
-
-
-        public static void MergeSort(List<Flashcard> flashcards, int left, int right)
+        public static void MergeSort(List<FlashCardsModel> flashcards, int left, int right)
 {
     if (left < right)
     {
@@ -62,10 +56,10 @@ namespace SanjayComSciIA.Models
     }
 }
 
-private static void Merge(List<Flashcard> flashcards, int left, int middle, int right)
+private static void Merge(List<FlashCardsModel> flashcards, int left, int middle, int right)
 {
-    List<Flashcard> leftList = new List<Flashcard>();
-    List<Flashcard> rightList = new List<Flashcard>();
+    List<FlashCardsModel> leftList = new List<FlashCardsModel>();
+    List<FlashCardsModel> rightList = new List<FlashCardsModel>();
 
     for (int i = left; i <= middle; i++)
     {

@@ -39,11 +39,13 @@ namespace SanjayComSciIA
         private void btnHard_Click(object sender, EventArgs e)
         {
             var flashcards = (from d in FlashCards select d.Front).ToList();
+            var difficulty = (from diff in FlashCards select diff.Difficulty).ToList();
+
             //checking if there are more cards
             if (flashcardCounter > flashcards.Count()-1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MergeSort(flashcards, 0, flashcards.Count - 1);
+               
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application
@@ -52,6 +54,7 @@ namespace SanjayComSciIA
                 flashcardCounter--;
             }
             txtCardAnswer.Text = flashcards[flashcardCounter].ToString();
+            txtDifficulty.Text = difficulty[flashcardCounter].ToString();
             //incrementing this flashcard value
             flashcardCounter++;
 
@@ -61,12 +64,13 @@ namespace SanjayComSciIA
         private void btnMedium_Click(object sender, EventArgs e)
         {
             var flashcards = (from d in FlashCards select d.Front).ToList();
+            var difficulty = (from diff in FlashCards select diff.Difficulty).ToList();
+
             //checking if there are more cards
             if (flashcardCounter > flashcards.Count() - 1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MergeSort(flashcards, 0, flashcards.Count - 1);
-                flashcards.sortFlashCards();
+                
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application
@@ -75,6 +79,8 @@ namespace SanjayComSciIA
                 flashcardCounter--;
             }
             txtCardAnswer.Text = flashcards[flashcardCounter].ToString();
+            txtDifficulty.Text = difficulty[flashcardCounter].ToString();
+
             //incrementing this flashcard value
             flashcardCounter++;
 
@@ -85,11 +91,12 @@ namespace SanjayComSciIA
         {
             
             var flashcards = (from d in FlashCards select d.Front).ToList();
+            var difficulty = (from diff in FlashCards select diff.Difficulty).ToList();
+
             //checking if there are more cards
             if (flashcardCounter > flashcards.Count() - 1)
             {
                 MessageBox.Show(this, "All Cards have been Studied!", Titles.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.None);
-                MergeSort(flashcards, 0, flashcards.Count - 1);
                 //closes the screen to return back to the main screen 
                 this.Close();
                 //Creating a new thread that runs the second application
@@ -98,6 +105,8 @@ namespace SanjayComSciIA
                 flashcardCounter--;
             }
             txtCardAnswer.Text = flashcards[flashcardCounter].ToString();
+            txtDifficulty.Text = difficulty[flashcardCounter].ToString();
+
             //incrementing this flashcard value
             flashcardCounter++;
         }
@@ -137,6 +146,11 @@ namespace SanjayComSciIA
         {
             var flashcards = (from d in FlashCards select d.Front).ToList();
             txtCardAnswer.Text = flashcards.First().ToString();
+            
+            var difficulty = (from diff in FlashCards select diff.Difficulty).ToList();
+            txtDifficulty.Text = difficulty.First().ToString();
+
         }
+
     }
 }

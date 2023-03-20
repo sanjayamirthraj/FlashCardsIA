@@ -39,6 +39,7 @@ namespace SanjayComSciIA
             this.btnEasy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.txtDifficulty = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.HeadingMainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@ namespace SanjayComSciIA
             this.txtCardAnswer.Location = new System.Drawing.Point(23, 158);
             this.txtCardAnswer.Multiline = true;
             this.txtCardAnswer.Name = "txtCardAnswer";
-            this.txtCardAnswer.Size = new System.Drawing.Size(462, 131);
+            this.txtCardAnswer.Size = new System.Drawing.Size(372, 131);
             this.txtCardAnswer.TabIndex = 13;
             // 
             // btnFlip
@@ -143,11 +144,20 @@ namespace SanjayComSciIA
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // txtDifficulty
+            // 
+            this.txtDifficulty.Location = new System.Drawing.Point(401, 180);
+            this.txtDifficulty.Multiline = true;
+            this.txtDifficulty.Name = "txtDifficulty";
+            this.txtDifficulty.Size = new System.Drawing.Size(102, 88);
+            this.txtDifficulty.TabIndex = 21;
+            // 
             // StudyingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 450);
+            this.Controls.Add(this.txtDifficulty);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnEasy);
@@ -177,5 +187,6 @@ namespace SanjayComSciIA
         private System.Windows.Forms.Button btnEasy;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.TextBox txtDifficulty;
     }
 }
