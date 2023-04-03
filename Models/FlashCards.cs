@@ -33,13 +33,13 @@ namespace SanjayComSciIA.Models
         {
             return new List<FlashCardsModel>
             {
-              new FlashCardsModel("Front", "Back", "Subject", "Easy"),
-              new FlashCardsModel("Front1", "Back1", "Subject1", "Medium"),
-              new FlashCardsModel("Front2", "Back2", "Subject2", "Hard"),
-              new FlashCardsModel("Bilogy", "Back3", "Biology", "Easy"),
-              new FlashCardsModel("Biology2", "Back4", "Biology", "Medium"),
-              new FlashCardsModel("Biology3", "Back5", "Biology", "Hard"),
-              new FlashCardsModel("Biology4", "Back6", "Biology", "Easy"),
+              new FlashCardsModel("Front", "Back", "Common Sense", "Easy"),
+              new FlashCardsModel("Front1", "Back1", "Common Sense", "Medium"),
+              new FlashCardsModel("Front2", "Back2", "Common Sense", "Hard"),
+              new FlashCardsModel("Bilogy", "Biology Back 1", "Biology", "Easy"),
+              new FlashCardsModel("Biology2", "Biology Back 2", "Biology", "Medium"),
+              new FlashCardsModel("Biology3", "Biology Back 3", "Biology", "Hard"),
+              new FlashCardsModel("Biology4", "Biology Back 4", "Biology", "Easy"),
 
             };
         }
